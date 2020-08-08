@@ -1,0 +1,444 @@
+/* Dosis Regular Font */
+@font-face{
+    src: url('../fonts/Dosis-Regular.ttf');
+    font-family: 'Dosis Regular';
+    font-weight: 400;
+}
+
+:root{
+    --primary-color: #016bff;
+    --secondary-color: #ffb700;
+    --tertiary-color: #ff432a;
+    --dark-color: #444444;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: var(--dark-color);
+    font-family: 'Dosis Regular';
+    font-weight: 400;
+    line-height: 1.8em;
+}
+
+header, nav, section{
+    display: block;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin: auto;
+    max-width: 1100px;
+    overflow: hidden;
+}
+
+.bg-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.hide-desktop{
+    display: none;
+}
+
+.text-secondary{
+    color: var(--secondary-color);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.btn{
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.btn.btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn.btn-primary:hover{
+    background-color: var(--tertiary-color);
+    color: #fff;
+}
+
+.btn.btn-tertiary{
+    background-color: var(--tertiary-color);
+    color: #fff;
+}
+
+.btn.btn.btn-tertiary:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.alert{
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.alert.alert-error{
+    /* background-color:#dc3545; */
+    background-color: #ff432a;
+    color: #fff;;
+}
+
+.fadein{
+    animation: fadeIn 0.5s;
+}
+
+.logo a{
+    color: #fff;
+}
+
+#site-header{
+    background-color: var(--primary-color);
+    position: fixed;
+    left: 0; 
+    padding: 0 20px;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#site-header #navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar .nav-menu{
+    display: flex;
+}
+
+#navbar .nav-menu li a{
+    border-bottom: 2px solid transparent;
+    display: block;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 20px 15px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#navbar .nav-menu li a.active,
+#navbar .nav-menu li a:hover{
+    border-bottom-color: var(--secondary-color);
+}
+
+/* Banner */
+#banner{
+    background: url('../img/header-bg.jpg') no-repeat center 20%/cover;
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+
+#banner::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#banner .banner-content{
+    color: #fff;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.banner-content h1{
+    color: #fff;
+    line-height: 1em;
+    font-size: 50px;
+    margin-bottom: 1rem;
+}
+
+.banner-content p{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+/* Signup Modal */
+.modal-wrapper{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-content{
+    animation: fadeIn 0.5s;
+    background-color: #ffffff;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    padding: 20px;
+    width: 450px;
+}
+
+.modal-content .logo a{
+    color: var(--primary-color);
+}
+
+#closebtn{
+    color: #ccc;
+    float: right;
+    font-size: 40px;
+}
+
+#closebtn:hover,
+#closebtn:focus{
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-title{
+    font-size: 25px;
+    margin-top: 13px;
+}
+
+label{
+    display: block;
+}
+
+#signup-form{
+    margin-top: 25px;
+}
+
+#signup-form .form-group{
+    display: flex;
+    padding-bottom: 20px;
+}
+
+#signup-form .form-group:hover .field-prepend,
+#signup-form input:focus ~ .field-prepend,
+#signup-form select:focus ~ .field-prepend{
+    background-color: var(--primary-color);
+}
+
+#signup-form .field-prepend{
+    background-color: #444;
+    color: #fff;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    width: 55px;
+    line-height: 55px;
+    order: 0;
+}
+
+#signup-form .field-wrapper{
+    order: 1;
+    position: relative;
+    width: 100%;
+}
+
+.field-wrapper .fas{
+    color: #444;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 6%;
+    font-size: 17px;
+}
+
+#signup-form input,
+#signup-form select{
+    border: 1px solid #444;
+    background-color: #fff;
+    font-family: 'Dosis Regular', sans-serif;
+    font-size: 17px;
+    height: 100%;
+    padding: 12px 15px;
+    transition: all 0.5s ease-in;
+    width: 100%;
+}
+
+#signup-form input:hover,
+#signup-form input:focus,
+#signup-form select:hover:focus
+#signup-form select:focus{
+    border-color: var(--primary-color);
+}
+
+#signup-form .btn{
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-family: 'Dosis Regular', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding: 15px 15px;
+    width: 100%;
+}
+
+#signup-form .btn i{
+    transform: translateX(5px) translateY(2px);
+}
+
+.success-image{
+    display: block;
+    margin: 15px auto 0 auto;
+    width: 200px;
+}
+
+/* Dashboard Page */
+#dashboard-header{
+    padding: 20px;
+}
+
+#dashboard-header h2{
+    margin-bottom: 15px;
+}
+
+#dashboard-header a{
+    border-radius: 50px;
+    background-color: var(--tertiary-color);
+    color: #fff;;
+    display: inline-block;
+    font: 1.1rem;
+    margin-top: 1rem;
+    padding: 8px 14px;
+    transition: all 0.5s ease-in-out;
+    width: 200px;
+}
+
+#dashboard-header a:hover{
+    opacity: 0.9;
+}
+
+/* FadeIn Amimation for modal */
+@keyframes fadeIn{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+@media(max-width: 695px){
+    .show-mobile{
+        display: block;
+    }
+
+    #site-header{
+        padding: 20px;
+    }
+
+    #site-header #navbar .menu-bar{
+        height: 15px;
+        width: 25px;
+    }
+
+    #navbar .nav-menu{
+        background-color: var(--primary-color);
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+    }
+
+    #navbar .nav-menu.active{
+        max-height: 700px;
+    }
+
+    #navbar .nav-menu li a{
+        padding: 20px 30px;
+    }
+}
+
+@media(max-width: 660px){
+    .banner-content h1{
+        font-size: 40px;
+    }
+
+    .banner-content p{
+        font-size: 20px;
+    }
+}
+
+@media(max-height: 500px){
+    #navbar .nav-menu li a{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media(max-width: 470px){
+    .modal-content{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media(max-height: 370px){
+    #navbar .nav-menu li a{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+@media(max-height: 550px){
+    .modal{
+        display: block;
+        height: auto;
+    }
+
+    .modal-content{
+        margin: auto;
+    }
+}
